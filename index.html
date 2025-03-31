@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Carta Especial</title>
+    <link rel="stylesheet" href="estilo.css" />
+  </head>
+  <body>
+    <!-- Sección inicial: Sobre y mensaje -->
+    <div id="intro">
+      <div class="mensaje">
+        Para que sepas que siempre habrá alguien para ti ❤️
+      </div>
+      <div class="envelope-container" onclick="abrirCarta()">
+        <div class="envelope"></div>
+        <div class="flap"></div>
+        <div class="heart">❤️</div>
+      </div>
+      <button class="boton" onclick="abrirCarta()">Abrir</button>
+    </div>
+
+    <!-- Sección de la carta (oculta inicialmente) -->
+    <div id="card">
+      <div class="card-message">
+        Para Cassi, No sé si el universo se equivocó o si es que la física se
+        volvió loca, pero de alguna forma, en este mundo lleno de caos y
+        desastres, llegó a mi puerta alguien tan increíble como tú. No sé muy
+        bien por qué, pero te amo con toda mi alma sin pensarlo dos veces lo
+        supe, y quiero que sepas que eres mucho más que lo que a veces piensas.
+        No eres ni tonta, ni débil, ni patética, lejos de eso. Esa voz
+        incoherente que te dice que eres “una inútil que no merece estar aquí”
+        necesita urgentemente un manual de instrucciones de error y de los
+        graves, porque lo cierto es que tú eres una persona sorprendente,
+        hermosa con o sin maquillaje, sos hermosísima, eres una guerrera que se
+        levanta hasta cuando la vida te da golpes tan fuertes que hacen que
+        parezca que el universo te desprecia pero no es así. Eres la persona que
+        siempre sabe cómo apoyar a los que amas, con una ternura que
+        desconcierta y una fortaleza que inspira. Cuando te propones algo, lo
+        haces con el corazón y, honestamente, es algo digno de admirar. Si
+        alguna vez dejaras este mundo, me rompería el alma de una manera tan
+        desastrosa que hasta los poetas más dramáticos se quedarían sin palabras
+        y, no exagero, de verdad me partiría en dos si algo te sucediese.
+        Gracias por ser esa persona única que ilumina mis días con tu sonrisita
+        preciosa y con esa chispa que solo tú tienes. Eres, sin duda, increíble
+        y, a veces, la realidad necesita un poco de tu magia para no perder el
+        rumbo en mi realidad, por lo menos si necesita de ti siempre. Con todo
+        mi cariño y admiración por la persona que eres, Jaaared jaja
+      </div>
+      <div class="card-gift" onclick="irAFlores()">
+        <div class="gift">🎁</div>
+        <div class="gift-text">
+          De mi para vos con todo mi corazón, aun que mi corazón no sea lo que
+          buscas jaja 🫰🏼
+        </div>
+      </div>
+    </div>
+
+    <!-- Código JavaScript embebido directamente en el index.html -->
+    <script>
+      function abrirCarta() {
+        // Oculta la sección inicial (sobre y mensaje)
+        document.getElementById("intro").style.display = "none";
+
+        // Selecciona el contenedor de la carta y fuerza el reflow
+        var card = document.getElementById("card");
+        card.style.display = "flex";
+        void card.offsetWidth; // Forzar reflow para que la transición funcione
+
+        // Con un pequeño retardo, añade la clase "open" para activar la animación
+        setTimeout(function () {
+          card.classList.add("open");
+        }, 100);
+      }
+
+      function irAFlores() {
+        // Redirige a la página de las flores
+        window.location.href = "FLORES.html";
+      }
+    </script>
+  </body>
+</html>
